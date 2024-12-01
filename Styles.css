@@ -1,0 +1,410 @@
+/* General Reset */
+:root {
+    --primary-color: #E22328;
+    --secondary-color: #FFE9E9;
+    --accent-color: #232323;
+    --white: #ffffff;
+    --primary-font-family: "Montserrat";
+    --primary-font-weight: 600;
+    --secondary-font-family: "Montserrat";
+    --secondary-font-weight: 500;
+    --padding: 15;
+    --text-gradient: linear-gradient(90deg, #13F000 34%, #7FFF00 34%, #AE0000 34%, #FF0000 34%);
+    --lost-gradient: linear-gradient(90deg, #991313 0%, #FF1F1F 75%);
+    --found-gradient: linear-gradient(90deg, #00CB14 75%, #00650A 100%);
+
+    --sizing: 33.3%;
+
+}
+
+@media screen and (min-width: 720px) {
+    .logo img {
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .logo img {
+        max-width: 180px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        padding: 1px 2px !important;
+    }
+
+    .logo img {
+        max-width: 125px;
+        margin-right: .5px;
+    }
+
+    .header h1 {
+        font-weight: lighter;
+        font-size: medium;
+    }
+
+    .item-img {
+        height: 340px;
+        width: 340px;
+    }
+
+    .btn {
+        font-size: 12px;
+    }
+
+    .items-section h2 {
+        font-size: small;
+        margin-right: 10px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, #FFE9E9 0%, #EDFFBB 100%);
+    font-family: var(--primary-font-family);
+    color: var(--accent-color);
+
+}
+
+.upper-side {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #fefefe;
+    border-bottom: 2px solid #ccc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    height: 15px;
+}
+
+
+
+
+
+.university-details p {
+    font-size: 12px;
+}
+
+.header h1 {
+
+    background: linear-gradient(to right, #13F000 0%, #7FFF00 34%, #AE0000 65%, #FF0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.sign-out-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background: #ba0000;
+    padding: 10px;
+    margin: auto;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.main-section {
+    padding: 20px;
+}
+
+.sizing {
+    width: var(--sizing);
+}
+
+.hero-section {
+    gap: 30px;
+    /* height: 40vh; */
+    display: flex;
+    padding: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --sizing: 100% !important;
+    }
+
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.hero-h1 {
+    box-sizing: border-box;
+    font-size: 50px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #13F000 0%, #7FFF00 34%, #AE0000 65%, #FF0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* padding-left: 100px; */
+}
+
+.hero-section p {
+    margin-bottom: 20px;
+    /* padding-left: 100px; */
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.buttons {
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: start;
+    justify-content: start;
+    margin: auto;
+    gap: 30px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buttons button {
+    display: flex;
+    font-size: large;
+
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin: auto;
+
+}
+
+.btn.lost {
+    background: var(--lost-gradient);
+}
+
+.btn.found {
+    background: var(--found-gradient);
+}
+
+
+.items-section {
+    margin-top: 30px;
+}
+
+.heading-block {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.items-section h2 {
+    margin-bottom: 10px;
+    margin-right: 30px;
+    display: inline;
+    background: linear-gradient(to right, #981902 0%, #ce8d02 34%, #98b902 65%, #00e300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.item-profile {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    padding-bottom: 5px;
+
+}
+
+.items a {
+    cursor: pointer;
+}
+
+.item-profile img {
+    height: 40px;
+    display: flex;
+
+}
+
+.item-img {
+    object-fit: contain;
+    height: 30vw;
+    width: 30vw;
+}
+
+@media only screen and (max-width: 840px) {
+    .item-img {
+        height: 45vw;
+        width: 45vw;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .item-img {
+        height: 90vw;
+        width: 90vw;
+    }
+}
+
+.item-card {
+    background: #FFE9E9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+    padding: 5px;
+    margin: auto;
+}
+
+.items {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.footer-links {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.about-contact {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.footer-links a {
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.footer-links p {
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.social-links img {
+    width: 20px;
+
+}
+
+.line {
+    height: 22px;
+    width: 6px;
+
+}
+
+
+#fatherofabout {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    left: 0;
+    display: none;
+    width: 98vw;
+    overflow: auto;
+}
+
+#fatherofsingle {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    left: 0;
+    display: none;
+    width: 98vw;
+    overflow: auto;
+}
+
+
+#fatherofoverlay {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    left: 0;
+    display: none;
+    width: 98vw;
+    overflow: auto;
+}
+
+#fatherofeditprofile {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    left: 0;
+    display: none;
+    width: 98vw;
+    overflow: auto;
+}
+
+#fatherofsignin {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    left: 0;
+    display: none;
+    width: 98vw;
+    overflow: auto;
+}

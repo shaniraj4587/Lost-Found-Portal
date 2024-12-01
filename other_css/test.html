@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="test.js"></script>
+</head>
+
+<body>
+  <img id="profile-picture-display" style="display: none; width: 100px; height: 100px; border-radius: 50%;" />
+
+  <div id="signin-modal" style="display: block;">
+    <h2>Sign In</h2>
+    <input type="text" id="signin-username" placeholder="Enter your Rollno./emp id" />
+    <input type="password" id="signin-password" placeholder="Enter Password" />
+    <button onclick="addSigninSignupToBody()">Sign In</button>
+    <p style="cursor: pointer; color: blue;" onclick="forgetPassword()">Forget Password?</p>
+    <p onclick="showSignUp()" style="cursor: pointer; color: blue;">Don't have an account? Sign Up</p>
+  </div>
+
+
+
+
+  <div id="signup-modal" style="display: none;">
+    <h2>Sign Up</h2>
+    <input type="text" id="signup-username" placeholder="Enter your Rollno./emp id" />
+    <input type="password" id="signup-password" placeholder="Enter Password" />
+    <input type="text" id="signup-mobile" placeholder="Enter Mobile Number" />
+    <input type="text" id="signup-name" placeholder="Enter Your Name" />
+    <input type="file" id="signup-profile-pic" accept="image/*" />
+    <button onclick="signUp()">Sign Up</button>
+    <p onclick="showSignIn()" style="cursor: pointer; color: blue;">Already have an account? Sign In</p>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+#signin-signup {
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    background: #26262654;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#signin-signup .modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    background: linear-gradient(to bottom right, #ffefba, #d4fc79);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: 50px;
+    overflow: auto;
+    margin-bottom: 100%;
+}
+
+
+#signin-signup .modal-content {
+    background: linear-gradient(to right, #f9f4f3, #d7f7cb);
+    border-radius: 20px;
+    width: 300px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+#signin-signup .close-btn {
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#signin-signup label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+#signin-signup select {
+    display: block;
+    padding: 8px 30px;
+    font-weight: bold;
+    margin: auto;
+}
+
+#signin-signup input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#signin-signup .button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#signin-signup button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#signin-signup button:hover {
+    background-color: #45a049;
+}
+
+#signin-signup .link {
+    padding: 10px;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}

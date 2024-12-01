@@ -1,0 +1,76 @@
+#editForm {
+    margin: 0px;
+    padding-top: 50px;
+    font-family: Arial, sans-serif;
+    background: #26262654;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#editForm .form-container {
+    width: 350px;
+    background: linear-gradient(to bottom right, #ffefba, #d4fc79);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: 50px;
+    overflow: auto;
+    margin-bottom: 50%;
+}
+
+#editForm .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+}
+
+#editForm .profile-pic {
+    margin-bottom: 15px;
+}
+
+#editForm .profile-pic img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+#editForm h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+#editForm form input, .hero-text form input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#editForm form button, .hero-text button {
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#editForm form button:hover {
+    background: #45a049;
+}

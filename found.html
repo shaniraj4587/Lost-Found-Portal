@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+
+    <title>Found Items</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="/Style/report.css">
+    <link rel="stylesheet" href="/Style/single-item.css">
+    <link rel="stylesheet" href="/Style/about.css">
+    <link rel="stylesheet" href="/Style/search.css">
+    <link rel="stylesheet" href="/Style/signin-signup.css">
+
+
+
+    <script src="Script.js"></script>
+    <script src="/Script/signin-signup.js"></script>
+    <script src="/Script/about.js"></script>
+</head>
+
+<body>
+    <div class="upper-side">
+        <header class="header">
+            <div class="logo">
+                <img src="/Contents/Logo.png" alt="MM(DU) Logo">
+            </div>
+            <h1>Lost & Found Portal</h1>
+            <button class="sign-out-btn" onclick="addSigninSignupToBody()">Sign In</button>
+        </header>
+
+        <nav class="navbar">
+            <a href="home.html">
+                <img class="icon" src="/Contents/home.png">&nbsp;Home</a> <img class="line" src="/Contents/Line.svg">
+            <a href="lost.html">
+                <img class="icon" src="/Contents/Lost.png">&nbsp;Lost</a> <img class="line" src="/Contents/Line.svg">
+            <a href="#">
+                <img class="icon" src="/Contents/Found.png">&nbsp;Found</a> <img class="line" src="/Contents/Line.svg">
+            <a href="profile.html">
+                <img class="icon" src="/Contents/profile.png">&nbsp;Profile</a>
+        </nav>
+    </div>
+
+    <main class="main-section">
+        <div class="hero-section">
+            <div class="spacer sizing"></div>
+            <div class="hero-text sizing">
+                <h1 class="hero-h1">Found Items</h1>
+                <div class="search-box" id="search-section">
+                    <div class="search-container">
+                        <div class="input-container">
+                            <input type="text" id="searchInput" placeholder="Search for items..."
+                                oninput="searchSuggestions()" />
+                            <button class="clear-btn" onclick="clearSearch()">✖</button>
+                        </div>
+                        <button class="search-btn" onclick="search()">Search</button>
+                    </div>
+                    <div id="results" class="results"></div>
+                    <script src="/Script/search.js"></script>
+                </div>
+            </div>
+            <div class="buttons">
+
+                <a id="openform" onclick="opener()"><button
+                        class="btn found">Found&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+                            src="/Contents/Found.png" height="25px">&nbsp;</button></a>
+            </div>
+            <!-- <div class="hero-right sizing">
+                
+
+            </div> -->
+        </div>
+
+        <section class="items-section">
+            <div class="heading-block">
+                <h2>Recently Found Items</h2>
+
+            </div>
+            <div class="items">
+                <a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-links">
+            <div class="about-contact">
+                <a onclick="addaboutToBody()" style="cursor: pointer;">About</a>
+                <img class="line" src="/Contents/Line.svg" alt="">
+                <a href="https://www.mmumullana.org/contact-us/" target="_blank">Contact</a>
+            </div>
+            <p>© Copyright MM(DU). All Rights Reserved</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/MMDUmullana" target="_blank"><img src="/Contents/facebook.svg"
+                        alt="Facebook"></a>
+                <a href="https://instagram.com/mmdumullana?igshid=YmMyMTA2M2Y=" target="_blank"><img
+                        src="/Contents/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/school/maharishi-markandeshwar-university-mullana"
+                    target="_blank"><img src="/Contents/linkedin.svg" alt="LinkedIn"></a>
+                <a href="https://www.youtube.com/MaharishiMarkandeshwarUniversityMullana" target="_blank"><img
+                        src="/Contents/youtube.svg" alt="Youtube"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- for report overlay -->
+
+
+    <div id="fatherofoverlay">
+        <div id="overlay">
+            <div class="report-container" id="reportForm" onclick="(event => event.stopPropagation())(event)">
+                <div class="header">
+                    <img src="/Contents/Profile.svg" alt="Profile Picture" class="profile-picture">
+                    <span class="reporter-name">Reporter Name</span>
+                    <button class="close-btn" id="closeBtnoverlay">✖</button>
+                </div>
+                <form id="reportFormContent">
+                    <label for="itemName">Item Name</label>
+                    <input type="text" id="itemName" placeholder="Enter item name">
+
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Enter description"></textarea>
+
+                    <label for="date">Date</label>
+                    <input type="date" id="date">
+
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Enter primary location">
+
+                    <label for="location2">Location 2</label>
+                    <input type="text" id="location2" placeholder="Enter secondary location">
+
+                    <label for="location3">Location 3</label>
+                    <input type="text" id="location3" placeholder="Enter tertiary location">
+
+                    <label for="upload">Upload 1st pics</label>
+                    <input type="file" id="upload" multiple accept="image/*">
+
+                    <label for="upload">Upload 2nd pics</label>
+                    <input type="file" id="upload" multiple accept="image/*">
+
+                    <label for="upload">Upload 3rd pics</label>
+                    <input type="file" id="upload" multiple accept="image/*">
+
+                    <button type="button" class="report-btn" id="reportBtn">Report</button>
+                </form>
+            </div>
+
+        </div>
+        <script src="/Script/report.js"></script>
+    </div>
+
+
+    <!-- for single item -->
+    <div id="fatherofsingle">
+        <div id="single-item">
+            <div class="report-container" id="reportForm" onclick="(event => event.stopPropagation())(event)">
+                <div class="carousel">
+                    <button class="carousel-btn left" id="prevBtn">❮</button>
+                    <img src="https://via.placeholder.com/300" alt="Image 1" class="carousel-image">
+                    <img src="https://via.placeholder.com/300/ff7f7f" alt="Image 2" class="carousel-image"
+                        style="display: none;">
+                    <img src="https://via.placeholder.com/300/7f7fff" alt="Image 3" class="carousel-image"
+                        style="display: none;">
+                    <button class="carousel-btn right" id="nextBtn">❯</button>
+                    <button class="close-btn" id="closeBtn">✖</button>
+                </div>
+                <div class="form-content">
+                    <label>Name</label>
+                    <p class="info-text">Shani Raj</p>
+
+                    <label>Role and Roll no./ Emp Id</label>
+                    <p class="info-text">"Student" &nbsp; 1323583</p>
+
+                    <label>Item name</label>
+                    <p class="info-text">Lost Wallet</p>
+
+                    <label>Description</label>
+                    <p class="info-text">Black leather wallet with multiple card slots and cash inside.</p>
+
+                    <label>Date</label>
+                    <p class="info-text">2024-11-15</p>
+
+                    <label>Location</label>
+                    <p class="info-text">Library - Main Hall</p>
+
+                    <label>Location 2</label>
+                    <p class="info-text">Near the computer section</p>
+
+                    <label>Location 3</label>
+                    <p class="info-text">Found near the entrance gate</p>
+
+                    <label>Comments</label>
+                    <textarea id="newComment" placeholder="Add your comment"></textarea>
+                    <div class="comment-user-detail">
+                        <img height="40px" src="/Contents/profile.png" alt="User">
+                        <div>
+                            <strong>Shani Raj </strong>
+                            <p>"Student"</p>
+                        </div>
+                        <button id="addCommentBtn">Add Your Comment</button>
+                    </div>
+                    <hr>
+                    <div id="commentsSection">
+                        <div class="comment">
+                            <img src="/Contents/profile.png" alt="User">
+                            <div>
+                                <strong>Shani Raj "Student"</strong>
+                                <p>I see it infront of department</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/Script/singleitem.js"></script>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

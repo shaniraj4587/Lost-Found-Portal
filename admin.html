@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="/Style/single-item.css">
+    <link rel="stylesheet" href="/Style/about.css">
+    <link rel="stylesheet" href="/Style/signin-signup.css">
+    <link rel="stylesheet" href="Style/editprofile.css">
+
+
+    <script src="Script.js"></script>
+    <script src="/Script/signin-signup.js"></script>
+    <script src="/Script/about.js"></script>
+</head>
+<style>
+    .userdetail span {
+        display: flex;
+        gap: 20px;
+        font-weight: bold;
+        height: 1.5em;
+    }
+</style>
+
+<body>
+    <div class="upper-side">
+        <header class="header">
+            <div class="logo">
+                <img src="/Contents/Logo.png" alt="MM(DU) Logo">
+            </div>
+            <h1>Lost & Found Portal</h1>
+            <button class="sign-out-btn" onclick="addSigninSignupToBody()">Sign In</button>
+        </header>
+
+        <nav class="navbar">
+            <a href="home.html">
+                <img class="icon" src="/Contents/home.png">&nbsp;Home</a> <img class="line" src="/Contents/Line.svg">
+            <a href="lost.html">
+                <img class="icon" src="/Contents/Lost.png">&nbsp;Lost</a> <img class="line" src="/Contents/Line.svg">
+            <a href="found.html">
+                <img class="icon" src="/Contents/Found.png">&nbsp;Found</a> <img class="line" src="/Contents/Line.svg">
+            <a href="#" onclick="loaddata();">
+                <img class="icon" src="/Contents/profile.png">&nbsp;Profile</a>
+        </nav>
+    </div>
+
+    <main class="main-section">
+        <div class="hero-section">
+            <div class="spacer sizing"></div>
+            <div class="hero-text sizing">
+                <h1 class="hero-h1"> Admin</h1>
+
+                <input id="adminusername" type=" text" placeholder="adimin id" style="margin: 5px; padding: 10px;" />
+                <input type="adminpassword" placeholder="Enter Password" style="margin: 5px; padding: 10px;" />
+                <button onclick="signInOfAdmin()">Sign In</button>
+                <script src="/Script/adminlogin.js"></script>
+            </div>
+
+        </div>
+        <div class=" hero-right sizing">
+            <!-- <div class="buttons">
+                
+                <a onclick="openereditprofile()"><button class="btn found">
+                        Edit your Profile &nbsp;&nbsp;&nbsp;
+                        <img src="/Contents/profile.png" height="25px">&nbsp;</button></a>
+            </div> -->
+
+        </div>
+        </div>
+
+        <section class="items-section">
+            <div class="heading-block">
+                <h2>Recently Lost Items</h2>
+
+            </div>
+            <div class="items">
+                <a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a>
+
+
+            </div>
+            <div class="heading-block">
+                <h2>Recently Found Items</h2>
+
+            </div>
+            <div class="items">
+                <a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a>
+
+
+            </div>
+            <div class="heading-block">
+                <h2>Recently Singup people</h2>
+
+            </div>
+            <div class="items">
+                <a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a><a onclick="openersingle()">
+                    <div class="items-grid">
+                        <div class="item-card">
+                            <div class="item-profile">
+                                <img src="/Contents/profile.png">
+                                <div class="item-owner">
+                                    <b>
+                                        <p>Name of Person</p>
+                                        <p>Role Of Person</p>
+                                    </b>
+                                </div>
+                            </div>
+                            <img class="item-img" src="/Contents/lost-watch.png" alt="Watch">
+                            <p><strong>Watch</strong></p>
+                            <p>From BCA department</p>
+                            <p>3 days before</p>
+                        </div>
+                        <!-- Repeat item cards as necessary -->
+                    </div>
+                </a>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-links">
+            <div class="about-contact">
+                <a onclick="addaboutToBody()" style="cursor: pointer;">About</a>
+                <img class="line" src="/Contents/Line.svg" alt="">
+                <a href="https://www.mmumullana.org/contact-us/" target="_blank">Contact</a>
+            </div>
+            <p>© Copyright MM(DU). All Rights Reserved</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/MMDUmullana" target="_blank"><img src="/Contents/facebook.svg"
+                        alt="Facebook"></a>
+                <a href="https://instagram.com/mmdumullana?igshid=YmMyMTA2M2Y=" target="_blank"><img
+                        src="/Contents/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/school/maharishi-markandeshwar-university-mullana"
+                    target="_blank"><img src="/Contents/linkedin.svg" alt="LinkedIn"></a>
+                <a href="https://www.youtube.com/MaharishiMarkandeshwarUniversityMullana" target="_blank"><img
+                        src="/Contents/youtube.svg" alt="Youtube"></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- for about page -->
+    <div id="fatherofabout">
+        <div id="bodyofabout">
+            <div class="about-container" id="aboutUs" onclick="(event => event.stopPropagation())(event)">
+                <div class="about-header">
+                    <h1>About Us</h1>
+                    <button class="close-btn" onclick="closeAbout()">✖</button>
+                </div>
+                <div class="about-content">
+                    <div class="design-section">
+                        <h2>Design and Develop By:</h2>
+                        <div class="person">
+                            <div class="person-detail">
+                                <img src="/Contents/profile.png" alt="Shani Raj" class="profile-pic">
+                                <div>
+                                    <p><strong>Shani Raj</strong></p>
+                                    <p>Student of BCA: 2023-26</p>
+                                </div>
+                            </div>
+                            <button class="contact-btn" onclick="contactme()">Contact</button>
+                        </div>
+                    </div>
+                    <div class="guidance-section">
+                        <h2>In the Guidance of:</h2>
+                        <div class="person">
+                            <div class="person-detail">
+                                <img src="/Contents/profile.png" alt="Preeti Sharma" class="profile-pic">
+                                <div>
+                                    <p><strong>Preeti Sharma</strong></p>
+                                    <p style="text-align: center;">Assistant Professor <br> (MMICT & BM)</p>
+                                </div>
+                            </div>
+                            <button class="contact-btn" onclick="contactPreeti()">Contact</button>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>Welcome to the MMDU Lost and Found Portal!</p>
+                        <p>This platform has been designed and developed with the aim of making it easier for students,
+                            faculty,
+                            and staff to report and recover lost items within the college premises. Under the guidance
+                            of
+                            our
+                            esteemed mentor, Preeti Sharma, this initiative strives to enhance community interaction and
+                            accountability by bridging the gap between finding and returning lost belongings.</p>
+                        <p>Whether you’ve misplaced something or found an unclaimed item, this portal is here to ensure
+                            quick,
+                            efficient, and secure resolutions. Our mission is to foster a responsible and connected
+                            campus
+                            community where every effort is made to reunite people with their belongings.</p>
+                        <p>We’re committed to continuous improvement, and your feedback is valuable in making this
+                            portal
+                            better. Together, let’s make our college a more caring and organized space!</p>
+                    </div>
+                    <div class="references">
+                        <h3>For Your References:</h3>
+                        <p>Here is the design file:</p>
+                        <iframe style="border: 5px solid rgba(102, 213, 100, 0.1);" width="100%" height="300px"
+                            src="https://embed.figma.com/design/O1BJJ4sfBqY8qfJmeItujX/Lost-%24-Found-Portal?node-id=0-1&m=dev&embed-host=share"
+                            allowfullscreen></iframe>
+                        <p>Here is the all code:</p>
+                        <iframe style="border: 5px solid rgba(102, 213, 100, 0.1);" width="100%" height="300px"
+                            src="https://embed.figma.com/design/O1BJJ4sfBqY8qfJmeItujX/Lost-%24-Found-Portal?node-id=0-1&m=dev&embed-host=share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <button class="close-btn-footer" onclick="closeAbout()">Close</button>
+                <script src="/Script/about.js"></script>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+#single-item {
+    margin: 0px;
+    padding-top: 50px;
+    font-family: Arial, sans-serif;
+    background: #26262654;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#single-item .report-container {
+    background: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 20px;
+    position: relative;
+    top: 50px;
+    overflow: auto;
+    margin-bottom: 50%;
+}
+
+#single-item .carousel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#single-item .carousel img {
+    object-fit: contain;
+
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#single-item .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+#single-item .carousel-btn.left {
+    left: 10px;
+}
+
+#single-item .carousel-btn.right {
+    right: 10px;
+}
+
+#single-item .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+#single-item .form-content {
+    margin-top: 10px;
+}
+
+#single-item label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#single-item .info-text {
+    background: #e6f7e6;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+
+#single-item #newComment {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#single-item .comment-user-detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#single-item .comment-user-detail p {
+    margin: 0;
+}
+
+#single-item .comment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#single-item .comment img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#single-item #addCommentBtn {
+    box-sizing: border-box;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-size: small;
+}
+
+#single-item .comment p {
+    margin: 0;
+
+}

@@ -1,0 +1,111 @@
+#search-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+#search-section .search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #d8f3dc;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#search-section input[type="text"] {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px 0 0 5px;
+}
+
+#search-section input[type="text"]:focus {
+    outline: none;
+    border: 2px solid #95d5b2;
+}
+
+#search-section .search-btn {
+    background-color: #2d6a4f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+#search-section .search-btn:hover {
+    background-color: #1b4332;
+}
+
+#search-section .results {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 350px;
+    display: none;
+}
+
+#search-section .results ul {
+    list-style: none;
+    padding: 0;
+}
+
+#search-section .results ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#search-section .results ul li:last-child {
+    border-bottom: none;
+}
+
+
+#search-section .input-container {
+    position: relative;
+    flex: 1;
+}
+
+#search-section input[type="text"] {
+    width: 100%;
+    border: none;
+    padding: 10px 35px 10px 10px;
+    font-size: 1em;
+    border-radius: 5px 0 0 5px;
+}
+
+#search-section input[type="text"]:focus {
+    outline: none;
+    border: 2px solid #95d5b2;
+}
+
+#search-section .clear-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1em;
+    color: #999;
+    cursor: pointer;
+    display: none;
+    /* Initially hidden */
+}
+
+#search-section .clear-btn:hover {
+    color: #333;
+}
+
+/* Show the clear button when input is not empty */
+#search-section input[type="text"]:not(:placeholder-shown)~.clear-btn {
+    display: block;
+}
