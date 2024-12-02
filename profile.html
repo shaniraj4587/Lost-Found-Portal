@@ -348,20 +348,21 @@
             <div class="form-container" onclick="(event => event.stopPropagation())(event)">
                 <button class="close-btn" id="closeBtnofeditprofile">&times;</button>
                 <div class="profile-pic">
-                    <img src="Contents/profile.png" alt="Profile Picture">
-                    <input type="file" id="signup-profile-pic" accept="image/*" />
+                    <img id="profile-pic" alt="Profile Picture" />
+                    <input id="profile-pic-input" type="file" accept="image/*" />
                 </div>
-                <h2>click to edit</h2>
+                <h2>Click to edit</h2>
                 <form id="userForm">
-                    <input type="text" placeholder="User Name.">
-                    <input type="text" placeholder="User Role">
-                    <input type="text" placeholder="User RollNo./emp id">
-                    <input type="text" placeholder="Contact no.">
-                    <input type="password" placeholder="Enter Old Password">
-                    <input type="password" placeholder="Enter new Password">
-                    <input type="password" placeholder="Confirm Password">
-                    <button type="button" id="saveBtnofeditprofile">Save info</button>
+                    <input id="username-input" type="text" placeholder="User Name" />
+                    <input id="role-input" type="text" placeholder="User Role" />
+                    <input id="rollno-input" type="text" placeholder="User RollNo./Emp ID" readonly />
+                    <input id="contact-input" type="text" placeholder="Contact No." />
+                    <input id="old-password-input" type="password" placeholder="Enter Old Password" />
+                    <input id="new-password-input" type="password" placeholder="Enter New Password" />
+                    <input id="confirm-password-input" type="password" placeholder="Confirm Password" />
+                    <button type="button" id="saveBtnofeditprofile">Save Info</button>
                 </form>
+
             </div>
             <script src="Script/editprofile.js"></script>
         </div>
