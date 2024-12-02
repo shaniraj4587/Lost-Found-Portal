@@ -103,30 +103,45 @@ function scrollToTop() {
 
 
 function signUp() {
-    const formData = new FormData();
-    formData.append("first_name", document.getElementById("signup-name-first").value);
-    formData.append("last_name", document.getElementById("signup-name-last").value);
-    formData.append("role", document.getElementById("signup-role").value);
-    formData.append("username", document.getElementById("signup-username").value);
-    formData.append("mobile", document.getElementById("signup-mobile").value);
-    formData.append("password", document.getElementById("signup-password").value);
-    formData.append("profile_pic", document.getElementById("signup-profile-pic").files[0]); // File input
+    const firstName = document.getElementById("signup-name-first").value.trim();
+    const lastName = document.getElementById("signup-name-last").value.trim();
+    const role = document.getElementById("signup-role").value.trim();
+    const username = document.getElementById("signup-username").value.trim();
+    const mobile = document.getElementById("signup-mobile").value.trim();
+    const password = document.getElementById("signup-password").value.trim();
+    const profilePic = document.getElementById("signup-profile-pic").files[0];
 
-    fetch('./php/signup.php', {
-        method: 'POST',
+    if (!firstName || !lastName || !role || !username || !mobile || !password || !profilePic) {
+        alert("All fields are required!");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("first_name", firstName);
+    formData.append("last_name", lastName);
+    formData.append("role", role);
+    formData.append("username", username);
+    formData.append("mobile", mobile);
+    formData.append("password", password);
+    formData.append("profile_pic", profilePic);
+
+    fetch("signup.php", {
+        method: "POST",
         body: formData,
     })
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
             if (data.status === "success") {
-                alert(data.message);
-                openModal('signInModal');
-                closeModal('signUpModal');
+                alert("Signup successful!");
+                // Redirect or perform other actions
             } else {
                 alert(data.message);
             }
         })
-        .catch(error => console.error("Error:", error));
+        .catch((error) => {
+            console.error("Error:", error);
+            alert("Something went wrong. Please try again.");
+        });
 }
 
 

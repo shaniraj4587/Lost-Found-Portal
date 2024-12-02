@@ -16,6 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
+
+            // Encode profile picture in base64 for use in the frontend
+            $user['profile_pic'] = $user['profile_pic'] ? base64_encode($user['profile_pic']) : null;
+
             echo json_encode(["status" => "success", "user" => $user]);
         } else {
             echo json_encode(["status" => "error", "message" => "User not found"]);

@@ -46,7 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 userDetailsContainer.innerHTML = userDetailsHTML;
 
                 // Set profile picture
-                profilePicture.src = data.user.profile_pic || "Contents/profile.png";
+                profilePicture.src = data.user.profile_pic
+                    ? `data:image/png;base64,${data.user.profile_pic}`
+                    : "Contents/profile.png";
+
             } else {
                 alert(data.message);
                 userDetailsContainer.innerHTML = "<p>Please Sign in first</p>";
