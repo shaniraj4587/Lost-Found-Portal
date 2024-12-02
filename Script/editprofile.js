@@ -30,7 +30,8 @@ function loadAndEditUserProfile() {
 
     if (!username) {
         alert("Please sign in first.");
-        window.location.href = "signin.html"; // Redirect to sign-in page
+        addSigninSignupToBody(); // Redirect to sign-in page
+        document.getElementById('fatherofeditprofile').style.display = 'none'
         return;
     }
 
