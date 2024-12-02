@@ -125,14 +125,15 @@ function signUp() {
     formData.append("password", password);
     formData.append("profile_pic", profilePic);
 
-    fetch("signup.php", {
+    fetch("./php/signup.php", {
         method: "POST",
         body: formData,
     })
         .then((response) => response.json())
         .then((data) => {
             if (data.status === "success") {
-                alert("Signup successful!");
+                alert("Signup successful! now you can Signin");
+                location.reload();
                 // Redirect or perform other actions
             } else {
                 alert(data.message);
