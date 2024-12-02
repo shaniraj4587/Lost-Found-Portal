@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle profile picture upload
     $profile_pic = null;
     if (isset($_FILES['profile_pic']) && $_FILES['profile_pic']['error'] == UPLOAD_ERR_OK) {
-        $upload_dir = "../uploadsprofilepics/"; // Directory to save profile pictures
+        $upload_dir = "uploadsprofilepics/"; // Directory to save profile pictures
         if (!file_exists($upload_dir)) {
             mkdir($upload_dir, 0777, true); // Create the directory if it doesn't exist
         }

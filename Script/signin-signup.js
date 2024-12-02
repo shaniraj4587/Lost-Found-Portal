@@ -148,9 +148,11 @@ function signIn() {
                 localStorage.setItem("loggedin", true);
                 localStorage.setItem("username", username);
 
+
                 // Update the button to show "Signout"
                 const button = document.getElementById("header-signinsignout-button");
                 button.textContent = "Sign out";
+                location.reload();
 
                 // Attach the signout functionality
                 button.onclick = () => {
@@ -160,6 +162,7 @@ function signIn() {
                         addSigninSignupToBody(); // Open signin popup
                     };
                     alert("You have successfully signed out.");
+                    location.reload();
                 };
 
                 alert(data.message); // Notify user
@@ -189,6 +192,7 @@ function initializeHeaderButton() {
                 addSigninSignupToBody(); // Open signin popup
             };
             alert("You have successfully signed out.");
+            location.reload();
         };
     } else {
         // If not logged in, show "Sign in" and attach functionality
