@@ -139,23 +139,68 @@ function signIn() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            username: username,
-            password: password
-        }),
+        body: JSON.stringify({ username: username, password: password }),
     })
-        .then(response => response.json()) // Parse response as JSON
+        .then(response => response.json())
         .then(data => {
             if (data.status === "success") {
+                // Store login status and username in localStorage
                 localStorage.setItem("loggedin", true);
-                alert(data.message);
+                localStorage.setItem("username", username);
+
+                // Update the button to show "Signout"
+                const button = document.getElementById("header-signinsignout-button");
+                button.textContent = "Sign out";
+
+                // Attach the signout functionality
+                button.onclick = () => {
+                    localStorage.clear(); // Clear localStorage
+                    button.textContent = "Sign in"; // Reset button content
+                    button.onclick = () => {
+                        addSigninSignupToBody(); // Open signin popup
+                    };
+                    alert("You have successfully signed out.");
+                };
+
+                alert(data.message); // Notify user
+                removeSigninSignupFromBody();
             } else {
-                alert(data.message);
+                alert(data.message); // Show error message
             }
         })
         .catch(error => console.error("Error:", error));
-
 }
+// Initialize the header button functionality
+function initializeHeaderButton() {
+    const button = document.getElementById("header-signinsignout-button");
+
+    if (!button) {
+        console.error("Button with ID 'header-signinsignout-button' not found in the DOM.");
+        return; // Exit if the button doesn't exist
+    }
+
+    if (localStorage.getItem("loggedin")) {
+        // If logged in, show "Signout" and attach functionality
+        button.textContent = "Sign out";
+        button.onclick = () => {
+            localStorage.clear();
+            button.textContent = "Sign in";
+            button.onclick = () => {
+                addSigninSignupToBody(); // Open signin popup
+            };
+            alert("You have successfully signed out.");
+        };
+    } else {
+        // If not logged in, show "Sign in" and attach functionality
+        button.textContent = "Sign in";
+        button.onclick = () => {
+            addSigninSignupToBody(); // Open signin popup
+        };
+    }
+}
+
+// Ensure this function runs after the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", initializeHeaderButton);
 
 function forgetPassword() {
     // Your code to handle password reset goes here.

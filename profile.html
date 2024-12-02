@@ -39,7 +39,8 @@
                 <img src="Contents/Logo.png" alt="MM(DU) Logo">
             </div>
             <h1>Lost & Found Portal</h1>
-            <button class="sign-out-btn" onclick="addSigninSignupToBody()">Sign In</button>
+            <button class="sign-out-btn" id="header-signinsignout-button" onclick="addSigninSignupToBody();">Sign
+                In</button>
         </header>
 
         <nav class="navbar">
@@ -359,17 +360,18 @@
                 <button class="close-btn" id="closeBtnofeditprofile">&times;</button>
                 <div class="profile-pic">
                     <img src="Contents/profile.png" alt="Profile Picture">
+                    <input type="file" id="signup-profile-pic" accept="image/*" />
                 </div>
                 <h2>click to edit</h2>
                 <form id="userForm">
-                    <input type="text" placeholder="your Name." id="name">
-                    <input type="text" placeholder="Your Role" id="role">
-                    <input type="text" placeholder="Your RollNo./emp id" id="rollno">
-                    <input type="text" placeholder="Contact no." id="contact">
-                    <input type="password" placeholder="Enter Old Password" id="oldPassword">
-                    <input type="password" placeholder="Enter new Password" id="newPassword">
-                    <input type="password" placeholder="Confirm Password" id="confirmPassword">
-                    <button type="button" id="saveBtn">Save info</button>
+                    <input type="text" placeholder="User Name.">
+                    <input type="text" placeholder="User Role">
+                    <input type="text" placeholder="User RollNo./emp id">
+                    <input type="text" placeholder="Contact no.">
+                    <input type="password" placeholder="Enter Old Password">
+                    <input type="password" placeholder="Enter new Password">
+                    <input type="password" placeholder="Confirm Password">
+                    <button type="button" id="saveBtnofeditprofile">Save info</button>
                 </form>
             </div>
             <script src="Script/editprofile.js"></script>
