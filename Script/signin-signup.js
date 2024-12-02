@@ -29,8 +29,8 @@ const htmlContentofsigninsignup = `<div id="fatherofsignin">
                     <input type="text" id="signup-name-last" placeholder="Enter your Last Name">
                     <label>Select Your Role</label>
                     <select name="Role" id="signup-role">
-                        <option value="faculty">faculty</option>
                         <option value="Student">Student</option>
+                        <option value="faculty">faculty</option>
                     </select>
                     <label>Enter your Rollno./emp id</label>
                     <input type="number" id="signup-username" placeholder="Enter your Rollno./emp id">
@@ -42,7 +42,7 @@ const htmlContentofsigninsignup = `<div id="fatherofsignin">
                     <input type="password" id="signup-password" placeholder="Enter Password">
                     <label>Confirm Password</label>
                     <input type="password" placeholder="Confirm Password">
-                    <button onclick="openModal('signInModal'); closeModal('signUpModal')">Sign up</button>
+                    <button onclick="signUp()">Sign up</button>
                     <p class="link" onclick="openModal('signInModal'); closeModal('signUpModal')">Already have an A/c?
                     </p>
                 </div>
@@ -97,5 +97,72 @@ function scrollToTop() {
     // Scroll to top logic
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
+
+
+
+function signUp() {
+    const formData = new FormData();
+    formData.append("first_name", document.getElementById("signup-name-first").value);
+    formData.append("last_name", document.getElementById("signup-name-last").value);
+    formData.append("role", document.getElementById("signup-role").value);
+    formData.append("username", document.getElementById("signup-username").value);
+    formData.append("mobile", document.getElementById("signup-mobile").value);
+    formData.append("password", document.getElementById("signup-password").value);
+    formData.append("profile_pic", document.getElementById("signup-profile-pic").files[0]); // File input
+
+    fetch('./php/signup.php', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert(data.message);
+                openModal('signInModal');
+                closeModal('signUpModal');
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => console.error("Error:", error));
+}
+
+
+function signIn() {
+    const username = document.getElementById("signin-username").value;
+    const password = document.getElementById("signin-password").value;
+
+    fetch('./php/signin.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password
+        }),
+    })
+        .then(response => response.json()) // Parse response as JSON
+        .then(data => {
+            if (data.status === "success") {
+                localStorage.setItem("loggedin", true);
+                alert(data.message);
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => console.error("Error:", error));
+
+}
+
+function forgetPassword() {
+    // Your code to handle password reset goes here.
+    // Example using an alert:
+    alert("Password reset functionality will be implemented soon.");
+
+    // Or, using console.log for debugging:
+    console.log("Forget Password button clicked!");
 }
 
