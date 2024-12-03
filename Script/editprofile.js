@@ -17,7 +17,8 @@ document.getElementById('editForm').addEventListener('click', () => {
 function loadAndEditUserProfile() {
     const profilePic = document.getElementById("profile-pic");
     const profilePicInput = document.getElementById("profile-pic-input");
-    const usernameInput = document.getElementById("username-input");
+    const userfirstnameInput = document.getElementById("first-name-input");
+    const userlastnameInput = document.getElementById("last-name-input");
     const roleInput = document.getElementById("role-input");
     const rollnoInput = document.getElementById("rollno-input");
     const contactInput = document.getElementById("contact-input");
@@ -48,7 +49,8 @@ function loadAndEditUserProfile() {
             if (data.status === "success") {
                 const user = data.user;
                 profilePic.src = `data:image/jpeg;base64,${user.profile_pic}`;
-                usernameInput.placeholder = `${user.first_name} ${user.last_name}`;
+                userfirstnameInput.placeholder = user.first_name;
+                userlastnameInput.placeholder = user.last_name;
                 roleInput.placeholder = user.role;
                 rollnoInput.placeholder = user.username; // RollNo./Emp ID is readonly
                 contactInput.placeholder = user.mobile;
@@ -62,49 +64,41 @@ function loadAndEditUserProfile() {
         });
 
     // Save updated details
-    saveButton.addEventListener("click", () => {
-        const newUsername = usernameInput.value.trim() || usernameInput.placeholder;
-        const newRole = roleInput.value.trim() || roleInput.placeholder;
-        const newContact = contactInput.value.trim() || contactInput.placeholder;
-        const oldPassword = oldPasswordInput.value.trim();
-        const newPassword = newPasswordInput.value.trim();
-        const confirmPassword = confirmPasswordInput.value.trim();
-
-        if (newPassword && newPassword !== confirmPassword) {
-            alert("New password and confirm password do not match.");
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append("username", username);
-        formData.append("new_username", newUsername);
-        formData.append("new_role", newRole);
-        formData.append("new_contact", newContact);
-        formData.append("old_password", oldPassword);
-        formData.append("new_password", newPassword);
-        if (profilePicInput.files[0]) {
-            formData.append("profile_pic", profilePicInput.files[0]); // Add profile picture file if changed
-        }
-
-        fetch("./php/update_user_details.php", {
-            method: "POST",
-            body: formData,
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.status === "success") {
-                    alert("Details updated successfully!");
-                    document.getElementById('fatherofeditprofile').style.display = 'none';
-                    window.location.reload(); // Reload page to reflect changes
-                } else {
-                    alert(data.message);
-                }
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                alert("Failed to update details. Please try again later.");
-                document.getElementById('fatherofeditprofile').style.display = 'none';
-            });
-    });
+    saveButton.addEventListener("click", saveUserDetails);
 }
 
+function saveUserDetails() {
+    const formData = new FormData();
+    formData.append("username", localStorage.getItem("username"));
+    formData.append("new_first_name", document.getElementById("first-name-input").value.trim());
+    formData.append("new_last_name", document.getElementById("last-name-input").value.trim());
+    formData.append("new_role", document.getElementById("role-input").value.trim());
+    formData.append("new_contact", document.getElementById("contact-input").value.trim());
+    formData.append("old_password", document.getElementById("old-password-input").value.trim());
+    formData.append("new_password", document.getElementById("new-password-input").value.trim());
+    const profilePicInput = document.getElementById("profile-pic-input");
+    if (profilePicInput.files[0]) {
+        formData.append("profile_pic", profilePicInput.files[0]);
+    }
+
+    fetch("./php/update_user_details.php", {
+        method: "POST",
+        body: formData,
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.status === "success") {
+                alert("Details updated successfully!");
+
+                // Refresh profile picture
+                const profilePic = document.getElementById("profile-pic");
+                profilePic.src = `${profilePic.src.split("?")[0]}?t=${new Date().getTime()}`;
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch((error) => {
+            console.error("Fetch Error:", error);
+            alert("A network or server error occurred. Please try again later.");
+        });
+}
