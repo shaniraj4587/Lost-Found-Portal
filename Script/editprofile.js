@@ -62,12 +62,11 @@ function loadAndEditUserProfile() {
             console.error("Error:", error);
             alert("Failed to fetch user details. Please try again later.");
         });
-
-    // Save updated details
-    saveButton.addEventListener("click", saveUserDetails);
 }
 
 function saveUserDetails() {
+    const newPassword = document.getElementById("new-password-input").value.trim();
+    const confirmPassword = document.getElementById("confirm-password-input").value.trim();
     const formData = new FormData();
     formData.append("username", localStorage.getItem("username"));
     formData.append("new_first_name", document.getElementById("first-name-input").value.trim());
@@ -79,6 +78,10 @@ function saveUserDetails() {
     const profilePicInput = document.getElementById("profile-pic-input");
     if (profilePicInput.files[0]) {
         formData.append("profile_pic", profilePicInput.files[0]);
+    }
+    if (newPassword && newPassword !== confirmPassword) {
+        alert("New password and confirm password do not match.");
+        return;
     }
 
     fetch("./php/update_user_details.php", {
