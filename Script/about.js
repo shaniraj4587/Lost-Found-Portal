@@ -11,7 +11,7 @@ const htmlContentofaboutpage = `<div id="fatherofabout">
                         <h2>Design and Develop By:</h2>
                         <div class="person">
                             <div class="person-detail">
-                                <img src="Contents/profile.png" alt="Shani Raj" class="profile-pic">
+                                <img src="Contents/shanipic.png" alt="Shani Raj" class="profile-pic">
                                 <div>
                                     <p><strong>Shani Raj</strong></p>
                                     <p>Student of BCA: 2023-26</p>
@@ -24,7 +24,7 @@ const htmlContentofaboutpage = `<div id="fatherofabout">
                         <h2>In the Guidance of:</h2>
                         <div class="person">
                             <div class="person-detail">
-                                <img src="Contents/profile.png" alt="Preeti Sharma" class="profile-pic">
+                                <img src="Contents/preetima'am.png" alt="Preeti Sharma" class="profile-pic">
                                 <div>
                                     <p><strong>Preeti Sharma</strong></p>
                                     <p style="text-align: center;">Assistant Professor <br> (MMICT & BM)</p>
