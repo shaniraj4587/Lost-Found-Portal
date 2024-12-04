@@ -59,7 +59,7 @@ const htmlContentofaboutpage = `<div id="fatherofabout">
                             allowfullscreen></iframe>
                         <p>Here is the all code:</p>
                         <iframe style="border: 5px solid rgba(102, 213, 100, 0.1);" width="100%" height="300px"
-                            src="https://embed.figma.com/design/O1BJJ4sfBqY8qfJmeItujX/Lost-%24-Found-Portal?node-id=0-1&m=dev&embed-host=share"
+                            src="https://github.com/shaniraj4587/Lost-Found-Portal"
                             allowfullscreen></iframe>
                     </div>
                 </div>

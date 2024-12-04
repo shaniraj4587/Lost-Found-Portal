@@ -14,55 +14,56 @@ document.getElementById('editForm').addEventListener('click', () => {
 
 
 
-function loadAndEditUserProfile() {
-    const profilePic = document.getElementById("profile-pic");
-    const profilePicInput = document.getElementById("profile-pic-input");
-    const userfirstnameInput = document.getElementById("first-name-input");
-    const userlastnameInput = document.getElementById("last-name-input");
-    const roleInput = document.getElementById("role-input");
-    const rollnoInput = document.getElementById("rollno-input");
-    const contactInput = document.getElementById("contact-input");
-    const oldPasswordInput = document.getElementById("old-password-input");
-    const newPasswordInput = document.getElementById("new-password-input");
-    const confirmPasswordInput = document.getElementById("confirm-password-input");
-    const saveButton = document.getElementById("saveBtnofeditprofile");
+// function loadAndEditUserProfile() {
+//     const profilePic = document.getElementById("profile-pic");
+//     const profilePicInput = document.getElementById("profile-pic-input");
+//     const userfirstnameInput = document.getElementById("first-name-input");
+//     const userlastnameInput = document.getElementById("last-name-input");
+//     const roleInput = document.getElementById("role-input");
+//     const rollnoInput = document.getElementById("rollno-input");
+//     const contactInput = document.getElementById("contact-input");
+//     const oldPasswordInput = document.getElementById("old-password-input");
+//     const newPasswordInput = document.getElementById("new-password-input");
+//     const confirmPasswordInput = document.getElementById("confirm-password-input");
+//     const saveButton = document.getElementById("saveBtnofeditprofile");
 
-    const username = localStorage.getItem("username");
+//     const username = localStorage.getItem("username");
 
-    if (!username) {
-        alert("Please sign in first.");
-        addSigninSignupToBody(); // Redirect to sign-in page
-        document.getElementById('fatherofeditprofile').style.display = 'none'
-        return;
-    }
+//     if (!username) {
+//         alert("Please sign in first.");
+//         addSigninSignupToBody(); // Redirect to sign-in page
+//         document.getElementById('fatherofeditprofile').style.display = 'none'
+//         return;
+//     }
 
-    // Fetch user details from the server
-    fetch("./php/fetch_user_details.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username }),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            if (data.status === "success") {
-                const user = data.user;
-                profilePic.src = `data:image/jpeg;base64,${user.profile_pic}`;
-                userfirstnameInput.placeholder = user.first_name;
-                userlastnameInput.placeholder = user.last_name;
-                roleInput.placeholder = user.role;
-                rollnoInput.placeholder = user.username; // RollNo./Emp ID is readonly
-                contactInput.placeholder = user.mobile;
-            } else {
-                alert(data.message);
-            }
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-            alert("Failed to fetch user details. Please try again later.");
-        });
-}
+//     // Fetch user details from the server
+//     fetch("./php/fetch_user_details.php", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({ username }),
+//     })
+//         .then((response) => response.json())
+//         .then((data) => {
+//             if (data.status === "success") {
+//                 const user = data.user;
+//                 profilePic.src = `data:image/jpeg;base64,${user.profile_pic}`;
+//                 userfirstnameInput.placeholder = user.first_name;
+//                 userlastnameInput.placeholder = user.last_name;
+//                 roleInput.placeholder = user.role;
+//                 rollnoInput.placeholder = user.username; // RollNo./Emp ID is readonly
+//                 contactInput.placeholder = user.mobile;
+//             } else {
+//                 alert(data.message);
+//             }
+//         })
+//         .catch((error) => {
+//             console.error("Error:", error);
+//             alert("Failed to fetch user details. Please try again later.");
+//             location.reload();
+//         });
+// }
 
 function saveUserDetails() {
     const newPassword = document.getElementById("new-password-input").value.trim();
@@ -92,10 +93,11 @@ function saveUserDetails() {
         .then((data) => {
             if (data.status === "success") {
                 alert("Details updated successfully!");
+                location.reload();
 
                 // Refresh profile picture
-                const profilePic = document.getElementById("profile-pic");
-                profilePic.src = `${profilePic.src.split("?")[0]}?t=${new Date().getTime()}`;
+                // const profilePic = document.getElementById("profile-pic");
+                // profilePic.src = `${profilePic.src.split("?")[0]}?t=${new Date().getTime()}`;
             } else {
                 alert(data.message);
             }
