@@ -62,3 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             profilePicture.src = "Contents/profile.png";
         });
 });
+
+
+
+// for report section in lost and found page

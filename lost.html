@@ -204,40 +204,24 @@
                     </div>
                     <button class="close-btn" id="closeBtnoverlay">✖</button>
                 </div>
-                <form id="reportFormContent">
-                    <label for="itemName">Item Name</label>
-                    <input type="text" id="itemName" placeholder="Enter item name">
-
-                    <label for="description">Description</label>
-                    <textarea id="description" placeholder="Enter description"></textarea>
-
-                    <label for="date">Date</label>
-                    <input type="date" id="date">
-
-                    <label for="location">Location</label>
-                    <input type="text" id="location" placeholder="Enter primary location">
-
-                    <label for="location2">Location 2</label>
-                    <input type="text" id="location2" placeholder="Enter secondary location">
-
-                    <label for="location3">Location 3</label>
-                    <input type="text" id="location3" placeholder="Enter tertiary location">
-
-                    <label for="upload">Upload 1st pics</label>
-                    <input type="file" id="upload" multiple accept="image/*">
-
-                    <label for="upload">Upload 2nd pics</label>
-                    <input type="file" id="upload" multiple accept="image/*">
-
-                    <label for="upload">Upload 3rd pics</label>
-                    <input type="file" id="upload" multiple accept="image/*">
-
-                    <button type="button" class="report-btn" id="reportBtn">Report</button>
+                <h2>Report Lost Item</h2>
+                <form id="lostItemForm">
+                    <input type="text" id="item-name" placeholder="Item Name" required />
+                    <textarea id="description" placeholder="Description"></textarea>
+                    <input type="text" id="location" placeholder="Last Known Location" required />
+                    <input type="date" id="date-lost" required />
+                    <input type="text" id="contact-number" placeholder="Contact Number" required />
+                    <label>Upload up to 3 images:</label>
+                    <input type="file" id="item-image1" accept="image/*" />
+                    <input type="file" id="item-image2" accept="image/*" />
+                    <input type="file" id="item-image3" accept="image/*" />
+                    <button type="button" class="report-btn" onclick=" reportLostItem()">Report Item</button>
                 </form>
+
             </div>
 
         </div>
-        <script src="Script/report.js"></script>
+        <script src="Script/report-lost.js"></script>
     </div>
 
 
