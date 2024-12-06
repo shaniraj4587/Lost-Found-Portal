@@ -32,7 +32,8 @@
                 <img src="Contents/Logo.png" alt="MM(DU) Logo">
             </div>
             <h1>Lost & Found Portal</h1>
-            <button class="sign-out-btn" id="header-signinsignout-button" onclick="addSigninSignupToBody();">Sign In</button>
+            <button class="sign-out-btn" id="header-signinsignout-button" onclick="addSigninSignupToBody();">Sign
+                In</button>
         </header>
 
         <nav class="navbar">
@@ -194,9 +195,11 @@
     <div id="fatherofoverlay">
         <div id="overlay">
             <div class="report-container" id="reportForm" onclick="(event => event.stopPropagation())(event)">
-                <div class="header">
-                    <img src="Contents/Profile.svg" alt="Profile Picture" class="profile-picture">
-                    <span class="reporter-name">Reporter Name</span>
+                <div class="header-of-report">
+                    <img id="profile-picture-display" alt="Profile Picture" class="profile-picture">
+                    <div class="userdetail">
+                        <!-- from database -->
+                    </div>
                     <button class="close-btn" id="closeBtnoverlay">✖</button>
                 </div>
                 <form id="reportFormContent">

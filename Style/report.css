@@ -6,10 +6,12 @@
     margin: 0px;
     font-family: Arial, sans-serif;
     background: #26262654;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    width: 100vw;
 
 }
 
@@ -19,34 +21,49 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
     padding: 20px;
-    position: relative;
+    position: fixed;
     margin-bottom: 100%;
+    top: 20px;
+    overflow-y: scroll;
+    z-index: 1;
+    height: 90vh;
 }
 
-#overlay .header {
+#overlay .header-of-report {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    flex-direction: row;
 
 }
 
 #overlay .profile-picture {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
 }
 
-#overlay .reporter-name {
-    font-size: 18px;
+#overlay .userdetail {
+    font-size: 10px;
     font-weight: bold;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#overlay .userdetail span {
+    display: block;
 }
 
 #overlay .close-btn {
-    background: none;
+    background: #4caf50;
     border: none;
     font-size: 20px;
+    padding: 1px;
     cursor: pointer;
     color: #000;
     margin-bottom: 80px;
