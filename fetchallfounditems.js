@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetchAllLostItems();
+    fetchAllfoundItems();
 });
-function fetchAllLostItems() {
-    fetch("./php/fetch_all_lost_items.php")
+function fetchAllfoundItems() {
+    fetch("./php/fetch_all_found_items.php")
         .then((response) => response.json())
         .then((data) => {
             if (data.status === "success") {
-                const container = document.getElementById("lost-items-container");
+                const container = document.getElementById("found-items-container");
                 container.innerHTML = ""; // Clear any existing content
 
                 data.items.forEach((item) => {
@@ -27,7 +27,7 @@ function fetchAllLostItems() {
                         <p><b>Reporter Id:</b> ${item.username}</p>
                         <p><b>Description:</b> ${item.description || "No description provided."}</p>
                         <p><b>Location:</b> ${item.location}</p>
-                        <p><b>Date Lost:</b> ${new Date(item.date_lost).toDateString()}</p>
+                        <p><b>Found Date:</b> ${new Date(item.date_found).toDateString()}</p>
                         <p><b>Contact:</b> ${item.contact_number}</p>
                     `;
 
