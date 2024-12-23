@@ -22,6 +22,7 @@
     <script src="Script.js"></script>
     <script src="Script/signin-signup.js"></script>
     <script src="Script/about.js"></script>
+    <script src="fetch-user-lost-items.js"></script>
 </head>
 <style>
     .userdetail span {
@@ -84,86 +85,8 @@
                 <h2>Your Lost Items</h2>
 
             </div>
-            <div class="items">
-                <a onclick="openersingle()">
-                    <div class="items-grid">
-                        <div class="item-card">
-                            <div class="item-profile">
-                                <img src="Contents/profile.png">
-                                <div class="item-owner">
-                                    <b>
-                                        <p>Name of Person</p>
-                                        <p>Role Of Person</p>
-                                    </b>
-                                </div>
-                            </div>
-                            <img class="item-img" src="Contents/lost-watch.png" alt="Watch">
-                            <p><strong>Watch</strong></p>
-                            <p>From BCA department</p>
-                            <p>3 days before</p>
-                        </div>
-                        <!-- Repeat item cards as necessary -->
-                    </div>
-                </a><a onclick="openersingle()">
-                    <div class="items-grid">
-                        <div class="item-card">
-                            <div class="item-profile">
-                                <img src="Contents/profile.png">
-                                <div class="item-owner">
-                                    <b>
-                                        <p>Name of Person</p>
-                                        <p>Role Of Person</p>
-                                    </b>
-                                </div>
-                            </div>
-                            <img class="item-img" src="Contents/lost-watch.png" alt="Watch">
-                            <p><strong>Watch</strong></p>
-                            <p>From BCA department</p>
-                            <p>3 days before</p>
-                        </div>
-                        <!-- Repeat item cards as necessary -->
-                    </div>
-                </a><a onclick="openersingle()">
-                    <div class="items-grid">
-                        <div class="item-card">
-                            <div class="item-profile">
-                                <img src="Contents/profile.png">
-                                <div class="item-owner">
-                                    <b>
-                                        <p>Name of Person</p>
-                                        <p>Role Of Person</p>
-                                    </b>
-                                </div>
-                            </div>
-                            <img class="item-img" src="Contents/lost-watch.png" alt="Watch">
-                            <p><strong>Watch</strong></p>
-                            <p>From BCA department</p>
-                            <p>3 days before</p>
-                        </div>
-                        <!-- Repeat item cards as necessary -->
-                    </div>
-                </a><a onclick="openersingle()">
-                    <div class="items-grid">
-                        <div class="item-card">
-                            <div class="item-profile">
-                                <img src="Contents/profile.png">
-                                <div class="item-owner">
-                                    <b>
-                                        <p>Name of Person</p>
-                                        <p>Role Of Person</p>
-                                    </b>
-                                </div>
-                            </div>
-                            <img class="item-img" src="Contents/lost-watch.png" alt="Watch">
-                            <p><strong>Watch</strong></p>
-                            <p>From BCA department</p>
-                            <p>3 days before</p>
-                        </div>
-                        <!-- Repeat item cards as necessary -->
-                    </div>
-                </a>
-
-
+            <div id="lost-items-container" class="items-grid items">
+                <!-- Items will be dynamically loaded here -->
             </div>
             <div class="heading-block">
                 <h2>Items That You Found</h2>
