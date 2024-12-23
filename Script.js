@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const username = localStorage.getItem("username");
-
+  
     if (!username) {
         // User not logged in
         userDetailsContainer.innerHTML = "<p>Please Sign in first</p>";
