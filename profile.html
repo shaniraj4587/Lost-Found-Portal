@@ -23,6 +23,7 @@
     <script src="Script/signin-signup.js"></script>
     <script src="Script/about.js"></script>
     <script src="fetch-user-lost-items.js"></script>
+    <script src="fetch-user-found-items.js"></script>
 </head>
 <style>
     .userdetail span {
@@ -104,86 +105,8 @@
                 <h2>Items That You Found</h2>
 
             </div>
-            <div class="items">
-                <a onclick="openersingle()">
-                    <div class="items-grid">
-                        <div class="item-card">
-                            <div class="item-profile">
-                                <img src="Contents/profile.png">
-                                <div class="item-owner">
-                                    <b>
-                                        <p>Name of Person</p>
-                                        <p>Role Of Person</p>
-                                    </b>
-                                </div>
-                            </div>
-                            <img class="item-img" src="Contents/lost-watch.png" alt="Watch">
-                            <p><strong>Watch</strong></p>
-                            <p>From BCA department</p>
-                            <p>3 days before</p>
-                        </div>
-                        <!-- Repeat item cards as necessary -->
-                    </div>
-                </a><a onclick="openersingle()">
-                    <div class="items-grid">
-                        <div class="item-card">
-                            <div class="item-profile">
-                                <img src="Contents/profile.png">
-                                <div class="item-owner">
-                                    <b>
-                                        <p>Name of Person</p>
-                                        <p>Role Of Person</p>
-                                    </b>
-                                </div>
-                            </div>
-                            <img class="item-img" src="Contents/lost-watch.png" alt="Watch">
-                            <p><strong>Watch</strong></p>
-                            <p>From BCA department</p>
-                            <p>3 days before</p>
-                        </div>
-                        <!-- Repeat item cards as necessary -->
-                    </div>
-                </a><a onclick="openersingle()">
-                    <div class="items-grid">
-                        <div class="item-card">
-                            <div class="item-profile">
-                                <img src="Contents/profile.png">
-                                <div class="item-owner">
-                                    <b>
-                                        <p>Name of Person</p>
-                                        <p>Role Of Person</p>
-                                    </b>
-                                </div>
-                            </div>
-                            <img class="item-img" src="Contents/lost-watch.png" alt="Watch">
-                            <p><strong>Watch</strong></p>
-                            <p>From BCA department</p>
-                            <p>3 days before</p>
-                        </div>
-                        <!-- Repeat item cards as necessary -->
-                    </div>
-                </a><a onclick="openersingle()">
-                    <div class="items-grid">
-                        <div class="item-card">
-                            <div class="item-profile">
-                                <img src="Contents/profile.png">
-                                <div class="item-owner">
-                                    <b>
-                                        <p>Name of Person</p>
-                                        <p>Role Of Person</p>
-                                    </b>
-                                </div>
-                            </div>
-                            <img class="item-img" src="Contents/lost-watch.png" alt="Watch">
-                            <p><strong>Watch</strong></p>
-                            <p>From BCA department</p>
-                            <p>3 days before</p>
-                        </div>
-                        <!-- Repeat item cards as necessary -->
-                    </div>
-                </a>
-
-
+            <div id="found-items-container" class="items-grid items">
+                <!-- Items will be dynamically loaded here -->
             </div>
         </section>
     </main>
@@ -209,73 +132,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- for single item -->
-    <div id="fatherofsingle">
-        <div id="single-item">
-            <div class="report-container" id="reportForm" onclick="(event => event.stopPropagation())(event)">
-                <div class="carousel">
-                    <button class="carousel-btn left" id="prevBtn">❮</button>
-                    <img src="https://via.placeholder.com/300" alt="Image 1" class="carousel-image">
-                    <img src="https://via.placeholder.com/300/ff7f7f" alt="Image 2" class="carousel-image"
-                        style="display: none;">
-                    <img src="https://via.placeholder.com/300/7f7fff" alt="Image 3" class="carousel-image"
-                        style="display: none;">
-                    <button class="carousel-btn right" id="nextBtn">❯</button>
-                    <button class="close-btn" id="closeBtn">✖</button>
-                </div>
-                <div class="form-content">
-                    <label>Name</label>
-                    <p class="info-text">Shani Raj</p>
-
-                    <label>Role and Roll no./ Emp Id</label>
-                    <p class="info-text">"Student" &nbsp; 1323583</p>
-
-                    <label>Item name</label>
-                    <p class="info-text">Lost Wallet</p>
-
-                    <label>Description</label>
-                    <p class="info-text">Black leather wallet with multiple card slots and cash inside.</p>
-
-                    <label>Date</label>
-                    <p class="info-text">2024-11-15</p>
-
-                    <label>Location</label>
-                    <p class="info-text">Library - Main Hall</p>
-
-                    <label>Location 2</label>
-                    <p class="info-text">Near the computer section</p>
-
-                    <label>Location 3</label>
-                    <p class="info-text">Found near the entrance gate</p>
-
-                    <label>Comments</label>
-                    <textarea id="newComment" placeholder="Add your comment"></textarea>
-                    <div class="comment-user-detail">
-                        <img height="40px" src="Contents/profile.png" alt="User">
-                        <div>
-                            <strong>Shani Raj </strong>
-                            <p>"Student"</p>
-                        </div>
-                        <button id="addCommentBtn">Add Your Comment</button>
-                    </div>
-                    <hr>
-                    <div id="commentsSection">
-                        <div class="comment">
-                            <img src="Contents/profile.png" alt="User">
-                            <div>
-                                <strong>Shani Raj "Student"</strong>
-                                <p>I see it infront of department</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="Script/singleitem.js"></script>
-    </div>
-
-
 
     <!-- for Edit profilepage -->
     <div id="fatherofeditprofile">
