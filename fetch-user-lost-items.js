@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchUserLostItems();
 });
 function fetchUserLostItems() {
-    const username = localStorage.getItem("username"); // Retrieve the username from localStorage
+    const username = localStorage.getItem("username");
     if (!username) {
         alert("No logged-in user found. Please log in first.");
         return;
@@ -43,10 +43,48 @@ function fetchUserLostItems() {
                         <p><strong>Lost ID:</strong> ${item.lost_id}</p>
                     `;
 
+                    const deleteIcon = document.createElement("span");
+                    deleteIcon.innerHTML = "🗑️ Delete This Item"; // Unicode trash icon
+                    deleteIcon.className = "delete-icon";
+                    deleteIcon.title = "Delete this item";
+                    deleteIcon.onclick = () => deleteLostItem(item.lost_id);
+
+                    itemDetails.appendChild(deleteIcon);
+
                     itemCard.appendChild(itemImage);
                     itemCard.appendChild(itemDetails);
+
                     itemsContainer.appendChild(itemCard);
                 });
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            alert("A network or server error occurred. Please try again later.");
+        });
+}
+
+
+
+function deleteLostItem(lostId) {
+    if (!confirm("Are you sure you want to delete this item?")) {
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("lost_id", lostId);
+
+    fetch("./php/delete_lost_item.php", {
+        method: "POST",
+        body: formData,
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.status === "success") {
+                alert(data.message);
+                fetchUserLostItems(); // Refresh the item list after deletion
             } else {
                 alert(data.message);
             }
