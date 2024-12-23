@@ -10,6 +10,7 @@
     width: 100vw;
 }
 
+
 #signin-signup .modal {
     display: none;
     justify-content: center;
@@ -20,10 +21,12 @@
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    top: 50px;
-    overflow: auto;
+    top: 20px;
+    overflow-y: auto;
     position: fixed;
     z-index: 1;
+    margin-bottom: 100%;
+
 }
 
 
@@ -32,8 +35,15 @@
     border-radius: 20px;
     width: 300px;
     padding: 20px;
-    position: relative;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    position: fixed;
+    margin-bottom: 100%;
+    top: 20px;
+    overflow-y: auto;
+    z-index: 1;
+    height: 90vh;
 }
 
 #signin-signup .close-btn {

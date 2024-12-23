@@ -81,7 +81,7 @@ function removeSigninSignupFromBody() {
         } else {
             console.log('HTML does not exist in the body');
         }
-    }, 2000);
+    }, 1000);
 }
 
 function openModal(modalId) {
