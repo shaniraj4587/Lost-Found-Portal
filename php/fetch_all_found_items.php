@@ -17,7 +17,7 @@ try {
             "item_name" => $row["item_name"],
             "description" => $row["description"],
             "location" => $row["location"],
-            "date_lost" => $row["date_found"],
+            "date_found" => $row["date_found"],
             "contact_number" => $row["contact_number"],
             "image1" => $row["image1"] ? base64_encode($row["image1"]) : null,
             "image2" => $row["image2"] ? base64_encode($row["image2"]) : null,
