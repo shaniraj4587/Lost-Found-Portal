@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function fetchUserLostItems() {
     const username = localStorage.getItem("username");
     if (!username) {
-        alert("No logged-in user found. Please log in first.");
+        console.log("No logged-in user found. Please log in first.");
         return;
     }
 
